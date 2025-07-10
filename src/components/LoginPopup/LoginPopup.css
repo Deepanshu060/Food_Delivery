@@ -1,0 +1,125 @@
+/* Overlay */
+.login-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+/* Container */
+.login-popup-container {
+    width: max(23vw, 330px);
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 14px;
+    color: #808080;
+    animation: fadeIn 0.5s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Header row */
+.login-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+
+/* Cross icon */
+.login-popup-title img {
+    width: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+/* Input fields */
+.login-popup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-popup-inputs input {
+    outline: none;
+    border: 1px solid #C9C9C9;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.login-popup-inputs input:focus {
+    border-color: #FF4C24;
+}
+
+/* Submit button */
+.login-popup-container button {
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    background-color: #FF4C24;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.3s;
+}
+
+.login-popup-container button:hover {
+    background-color: #e0431f;
+}
+
+/* Checkbox area */
+.login-popup-condition {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: -10px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.login-popup-condition input {
+    margin-top: 5px;
+}
+
+/* Footer switch text */
+.login-popup p {
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-popup p span {
+    color: #FF4C24;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.login-popup p span:hover {
+    color: #e0431f;
+}
+
+/* Optional fade animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
