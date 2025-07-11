@@ -36,11 +36,14 @@ const Cart = () => {
         <div className="cart-total">
           <h2>Cart Totals</h2>
           <div>
-            <div className="cart-total-details"><p>Subtotal</p><p>₹{getTotalCartAmount()}</p></div>
+            <div className="cart-total-details"><p>Subtotal</p><p>₹{getTotalCartAmount().toFixed(2)}</p></div>
             <hr />
-            <div className="cart-total-details"><p>Delivery Fee</p><p>₹{getTotalCartAmount()===0?0:0}</p></div>
+            <div className="cart-total-details"><p>Delivery Fee</p><p>₹{(getTotalCartAmount()===0?0:0).toFixed(2)}</p></div>
             <hr />
-            <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()===0?0:getTotalCartAmount()}</b></div>
+            <div className="cart-total-details"><p>18% GST</p><p>₹{(getTotalCartAmount() * 0.18).toFixed(2)}</p>
+            </div>
+            <hr />
+            <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()===0?0:(getTotalCartAmount() * 1.18).toFixed(2)}</b></div>
           </div>
           <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
         </div>

@@ -3,11 +3,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 15px;
 }
 
 .navbar .logo {
     width: 150px;
-    height: 80px;
+    height: 70px;
     margin-top: 0px;
 }
 
@@ -21,13 +22,14 @@
 
 .navbar-menu .active {
     padding-bottom: 2px;
-    border-bottom: 2px solid #49557E;
+    border-bottom: 2px solid #1941c4;
 }
 
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 40px;
+    
 }
 
 .navbar-search-icon{
@@ -43,12 +45,24 @@ position: relative;
     top: -8px;
     right: -8px;
 }
+.user-initial-circle {
+  background-color: #ff4c24;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+}
 
 .navbar-right button {
     background: transparent;
     font-size: 16px;
     color: #49557E;
-    border: 1px solid #FF4C24;
+    border: 1px solid #3f1006;
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;

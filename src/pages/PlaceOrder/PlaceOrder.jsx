@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../Context/StoreContext'
-import { assets } from '../../assets/assets';
-import { useNavigate } from 'react-router-dom';
+import { assets } from '../../assets/assets'
+import { useNavigate } from 'react-router-dom'
 
 const PlaceOrder = () => {
 
@@ -15,12 +15,12 @@ const PlaceOrder = () => {
         state: "",
         zipcode: "",
         country: "",
-        phone: ""
+        phone: "",
+        paymentMethod: "COD"
     })
 
-    const { getTotalCartAmount, placeOrder } = useContext(StoreContext);
-
-    const navigate = useNavigate();
+    const { getTotalCartAmount, placeOrder } = useContext(StoreContext)
+    const navigate = useNavigate()
 
     const onChangeHandler = (event) => {
         const name = event.target.name
@@ -54,26 +54,46 @@ const PlaceOrder = () => {
                 </div>
                 <input type="text" name='phone' onChange={onChangeHandler} value={data.phone} placeholder='Phone' />
             </div>
+
             <div className="place-order-right">
                 <div className="cart-total">
                     <h2>Cart Totals</h2>
                     <div>
-                        <div className="cart-total-details"><p>Subtotal</p><p>${getTotalCartAmount()}</p></div>
+                        <div className="cart-total-details"><p>Subtotal</p><p>₹{getTotalCartAmount()}</p></div>
                         <hr />
-                        <div className="cart-total-details"><p>Delivery Fee</p><p>${getTotalCartAmount() === 0 ? 0 : 5}</p></div>
+                        <div className="cart-total-details"><p>Delivery Fee</p><p>₹{getTotalCartAmount() === 0 ? 0 : 0}</p></div>
                         <hr />
-                        <div className="cart-total-details"><b>Total</b><b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 5}</b></div>
+                        <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()}</b></div>
                     </div>
-                </div>
-                <div className="payment-options">
-                    <h2>Select Payment Method</h2>
-                    <div className="payment-option">
-                        <img src={assets.selector_icon} alt="" />
-                        <p>COD ( Cash On Delivery )</p>
-                    </div>
-                    <button onClick={() => placeOrder(data)}>PLACE ORDER</button>
                 </div>
 
+                <div className="payment-options">
+                    <h2>Select Payment Method</h2>
+
+                    <div className="payment-option">
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="COD"
+                            checked={data.paymentMethod === "COD"}
+                            onChange={onChangeHandler}
+                        />
+                        <p>COD (Cash On Delivery)</p>
+                    </div>
+
+                    <div className="payment-option">
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="UPI"
+                            checked={data.paymentMethod === "UPI"}
+                            onChange={onChangeHandler}
+                        />
+                        <p>Pay via any UPI App</p>
+                    </div>
+
+                    <button onClick={() => placeOrder(data)}>PLACE ORDER</button>
+                </div>
             </div>
         </div>
     )
