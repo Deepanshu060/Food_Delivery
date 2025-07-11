@@ -63,7 +63,11 @@ const PlaceOrder = () => {
                         <hr />
                         <div className="cart-total-details"><p>Delivery Fee</p><p>₹{getTotalCartAmount() === 0 ? 0 : 0}</p></div>
                         <hr />
-                        <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()}</b></div>
+                        <div className="cart-total-details"><p>18% GST</p><p>₹{(getTotalCartAmount() * 0.18).toFixed(2)}</p>
+                        </div>
+                        <hr />
+                        <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()===0?0:(getTotalCartAmount() * 1.18).toFixed(2)}</b></div>
+                        
                     </div>
                 </div>
 
