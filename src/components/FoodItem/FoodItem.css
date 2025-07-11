@@ -8,6 +8,7 @@
 }
 .food-item:hover{
     transform: scale(1.02);
+    border:2px solid black ;
 }
 .food-item-img-container{
     position: relative;

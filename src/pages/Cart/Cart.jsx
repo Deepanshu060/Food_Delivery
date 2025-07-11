@@ -22,10 +22,10 @@ const Cart = () => {
               <div className="cart-items-title cart-items-item">
                 <img src={item.food_image} alt="" />
                 <p>{item.food_name}</p>
-                <p>${item.food_price}</p>
+                <p>₹{item.food_price}</p>
                 <div>{cartItems[item.food_id]}</div>
-                <p>${item.food_price*cartItems[item.food_id]}</p>
-                <p className='cart-items-remove-icon' onClick={()=>removeFromCart(item.food_id)}>x</p>
+                <p>₹{item.food_price*cartItems[item.food_id]}</p>
+                <p className='cart-items-remove-icon' onClick={()=>removeFromCart(item.food_id)}>-</p>
               </div>
               <hr />
             </div>)
@@ -36,11 +36,11 @@ const Cart = () => {
         <div className="cart-total">
           <h2>Cart Totals</h2>
           <div>
-            <div className="cart-total-details"><p>Subtotal</p><p>${getTotalCartAmount()}</p></div>
+            <div className="cart-total-details"><p>Subtotal</p><p>₹{getTotalCartAmount()}</p></div>
             <hr />
-            <div className="cart-total-details"><p>Delivery Fee</p><p>${getTotalCartAmount()===0?0:5}</p></div>
+            <div className="cart-total-details"><p>Delivery Fee</p><p>₹{getTotalCartAmount()===0?0:0}</p></div>
             <hr />
-            <div className="cart-total-details"><b>Total</b><b>${getTotalCartAmount()===0?0:getTotalCartAmount()+5}</b></div>
+            <div className="cart-total-details"><b>Total</b><b>₹{getTotalCartAmount()===0?0:getTotalCartAmount()}</b></div>
           </div>
           <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
         </div>

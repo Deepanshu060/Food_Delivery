@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -36,4 +36,83 @@ a {
   .app {
     width: 90%;
   }
+}  */
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Outfit', sans-serif;
+  scroll-behavior: smooth;
 }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8f9fb, #e4e7ec);
+  color: #2e2e2e;
+} 
+
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: #2b6cb0;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #1a4d80;
+} 
+
+/* Main Container */
+ .app {
+  width: 80%;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-in-out;
+} 
+
+/* Animation */
+ @keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+/* Responsive */
+@media (max-width: 1050px) {
+  .app {
+    width: 90%;
+    padding: 1.5rem;
+  }
+} 
+
+/* Optional utility classes */
+.btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #2b6cb0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #1a4d80;
+} 
