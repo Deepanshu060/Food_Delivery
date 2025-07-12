@@ -7,8 +7,6 @@
   backdrop-filter: blur(12px);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  /* position: sticky; -- removed */
-  /* top: 0; -- removed */
   z-index: 999;
 }
 

@@ -61,7 +61,7 @@ body {
   color: #2e2e2e;
 } 
 
-/* Link Styles */
+
 a {
   text-decoration: none;
   color: #2b6cb0;
@@ -71,7 +71,7 @@ a:hover {
   color: #1a4d80;
 } 
 
-/* Main Container */
+
  .app {
   width: 85%;
   margin: auto;
@@ -82,7 +82,7 @@ a:hover {
   animation: fadeIn 0.8s ease-in-out;
 } 
 
-/* Animation */
+
  @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -94,7 +94,7 @@ a:hover {
   }
 } 
 
-/* Responsive */
+
 @media (max-width: 1050px) {
   .app {
     width: 90%;
@@ -102,7 +102,7 @@ a:hover {
   }
 } 
 
-/* Optional utility classes */
+
 .btn {
   padding: 0.6rem 1.2rem;
   background-color: #2b6cb0;

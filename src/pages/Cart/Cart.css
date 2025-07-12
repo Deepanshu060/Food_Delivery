@@ -105,6 +105,13 @@
   box-shadow: 0 0 8px rgba(0, 201, 255, 0.6);
   transition: transform 0.2s, box-shadow 0.3s;
 }
+.disabled-button {
+  background-color: grey;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 
 .cart-total button:hover {
   transform: scale(1.02);
